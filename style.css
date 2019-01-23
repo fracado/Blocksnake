@@ -1,0 +1,46 @@
+body {
+  background: -webkit-linear-gradient(top, #7fc5c9, #deabbe);
+  text-align: center;
+}
+
+.scoreText {
+  font-family: Helvetica;
+  font-size: 2em;
+  color: #fff;
+}
+
+
+.score {
+  font-family: verdana;
+  font-size: 1em;
+  display: inline-block;
+  position: relative;
+  color: #fff;
+}
+
+button {
+  background-color: green;
+  color: white;
+  border: none;
+  bottom: 0;
+  height: 30px;
+  font-size: 12pt;
+  width: 90px;
+  margin: 10px 0 0 0;
+}
+button:hover {
+  background-color: mediumvioletred;
+}
+
+button:disabled {
+  background-color: lightgray;
+}
+
+p {
+  font-family: Helvetica;
+  font-weight: bold;
+  width: 250px;
+  margin: 18px 0 5px 8px;
+  display: inline-block;
+  position: relative;
+}
