@@ -1,25 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Snakes</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href='https://fonts.googleapis.com/css?family=Russo+One' rel='stylesheet' type='text/css'>
+  <meta charset="utf-8">
+  <title>Snake Game</title>
 </head>
 <body>
-  <div class="scoreText">Score: 
-  <div class="score" id="score">0</div>
-</div>
-  <canvas id="canvas" width="500" height="500">
-    <!-- TO SHOW WHEN CANVAS IS NOT SUPPORTED -->
-    Sorry - Your browser does not support canvas. Please use a different browser to play. 
-  </canvas>
-  <p>Press START and use arrow keys to move</p>
-    <button id='btn'>START</button>
-
-  <script src="set.js"></script>
-  <script src="objects.js"></script>
-  <script src="game.js"></script>
+  <div class="box1">
+    <h1><img src="/images/title.png" alt="BLOCKsnake"></h1>
+  </div>
+  <div class="box2">
+    <section id="game-score">
+      <div><p id="user-level">Level: 1</p></div>
+      <div><p id="user-score">Score:</></div>
+    </section>
+    <div class="game-overlay overlay">
+      <h2 class="game-instructions">Press PLAY to start new game</h2>
+    </div>
+    <div class="game-over-overlay overlay" style="display: none">
+      <h2 id="highscore">Highscore:</h2>
+      <h2 class="game-over-message">Game over!<br>Press REFRESH to restart</h2><br>
+    </div>
+    <div><canvas id="game-canvas" width="400" height="400" style="display: none">
+    </canvas></div>
+  </div>
+  <div class="box3">
+    <div><section class="user-interaction">
+      <button id="start-button"></button>
+      <button id="reset-button"></button>
+   </section></div>
+  </div>
+  <audio id="bkgmusic" src="audio/bkgmusic.ogg" loop="infinite"></audio>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script src="class.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>

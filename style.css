@@ -1,39 +1,31 @@
 body {
-  background: -webkit-linear-gradient(top, #7fc5c9, #deabbe);
+  background: -webkit-linear-gradient(top, #330cc2, #7dfdc1, #330cc2);
   text-align: center;
 }
 
-.scoreText {
-  font-family: Helvetica;
-  font-size: 2em;
-  color: #fff;
+.box1, .box3 {
+  display: flex;
+  justify-content: center;
 }
 
-
-.score {
-  font-family: verdana;
-  font-size: 1em;
-  display: inline-block;
-  position: relative;
-  color: #fff;
+.box2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-button {
-  background-color: green;
-  color: white;
-  border: none;
-  bottom: 0;
-  height: 30px;
-  font-size: 12pt;
-  width: 90px;
-  margin: 10px 0 0 0;
-}
-button:hover {
-  background-color: mediumvioletred;
-}
-
-button:disabled {
-  background-color: lightgray;
+h2 {
+  color: rgb(4, 0, 26);
+  text-shadow: 0 0 10px #fff,
+  0 0 20px #fff,
+  0 0 30px #fff,
+  0 0 40px #ff00de,
+  0 0 70px #ff00de,
+  0 0 80px #ff00de,
+  0 0 100px #ff00de,
+  0 0 150px #ff00de;
+  font-family: Trebuchet, Lucida;
+  font-weight: 800;
 }
 
 p {
@@ -43,4 +35,75 @@ p {
   margin: 18px 0 5px 8px;
   display: inline-block;
   position: relative;
+  padding: 0;
+  margin: 0;
+}
+
+.game-overlay {
+  display: flex;
+  height: 400px;
+  opacity: 0.7;
+  width: 400px;
+}
+
+.game-over-overlay {
+  display: flex;
+  display: none;
+  height: 400px;
+  opacity: 0.7;
+  width: 400px;
+}
+
+.game-over-message, .game-instructions {
+  padding-top: 140px;
+  text-align: center;
+}
+
+#game-canvas {
+  border: 2px solid plum;
+  background: url(images/background-grid.jpg) no-repeat;
+  background-position: left top;
+  background-size: 400px;
+  height: 400px;
+  margin: auto;
+  width: 400px;
+}
+
+#game-score {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 15px;
+}
+
+.user-interaction {
+  display: flex;
+  flex-direction: row;
+  height: 100px;
+  justify-content: flex-end;
+  padding-right: 40px;
+  padding-top: 20px;
+}
+
+#start-button {
+  background: url(images/play-button.png) no-repeat;
+  background-color: transparent;
+  background-size: 50px;
+  border: none;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  display: flex;
+  height: 50px;
+  margin-right: 20px;
+  width: 50px;
+}
+
+#reset-button {
+ background: url(images/refresh-button.png) no-repeat;
+ background-color: transparent;
+ background-size: 50px;
+ border: none;
+ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+ height: 50px;
+ width: 50px;
+ display: flex;
 }
