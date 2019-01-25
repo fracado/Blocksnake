@@ -44,7 +44,8 @@ class Canvas {
 
   isSnakeCollidingWithFood(food) {
 	  if (this.food.x === this.totalSnake[0].x && this.food.y === this.totalSnake[0].y) {
-	    this.newFood();
+      eat.play();
+      this.newFood();
 	    maxLength++;
 	    this.increaseScore();
 	    this.changeLevel();
@@ -58,7 +59,7 @@ class Canvas {
     for (var i = 1; i < this.totalSnake.length; i++) {
       var snakeBody = this.totalSnake;
       var snakeHead = this.totalSnake[0];
-      if (snakeHead.x === snakeBody[i].x && snakeHead.y === snakeBody[i].y) {
+      if (snakeHead.x === snakeBody[i].x && snakeHead.y === snakeBody[i].y) { 
         this.gameOver();
       }
     }
@@ -153,6 +154,7 @@ class Canvas {
   gameOver() {
 	  $('.game-over-overlay').show();
     $('#game-canvas').hide();
+    //gameover.play();
     //var highscore = document.getElementById("highscore");
     if (this.score > localStorage.getItem("highscore")) {
       $('#highscore-display').html('<h2>New Highscore: ' + localStorage.getItem("highscore") + '</h2>');

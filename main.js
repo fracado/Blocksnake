@@ -1,5 +1,9 @@
 var bkgmusic = $("#bkgmusic")[0];
     bkgmusic.load();
+var eat = $("#eat")[0];
+    eat.load();
+var gameover = $("#gameover")[0];
+    gameover.load();
 
 const canvas = document.getElementById("game-canvas");
 const context = canvas.getContext('2d');
@@ -23,7 +27,10 @@ function renderWorld(world) {
   var totalSnake = world.totalSnake;
 
   context.clearRect(0, 0, world.width, world.height);
-  context.fillStyle = "#ff7f00";
+  context.strokeStyle = "#a34100";
+  context.lineWidth = 2;
+  context.strokeRect(food.x, food.y, food.width, food.height);
+  context.fillStyle = "#e56b00";
   context.fillRect(food.x, food.y, food.width, food.height);
   fillSnake();
 }
