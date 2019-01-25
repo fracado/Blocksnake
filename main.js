@@ -23,7 +23,7 @@ function renderWorld(world) {
   var totalSnake = world.totalSnake;
 
   context.clearRect(0, 0, world.width, world.height);
-  context.fillStyle = "#002463";
+  context.fillStyle = "#ff7f00";
   context.fillRect(food.x, food.y, food.width, food.height);
   fillSnake();
 }

@@ -1,6 +1,6 @@
 # Project Title
 
-Ironhack Project #1: Snake Game
+Ironhack Project #1: Blocksnake - A classic snake game
 
 ## What's this about?
 
@@ -12,7 +12,7 @@ The player controls the snake with the objective to eat randomly appearing objec
 
 ### How To Play
 
-Keys etc.
+Use the arrow keys to move the snake. Avoid crashing into Walls or yourself.
 
 ## Technologies Used:
 
@@ -23,7 +23,7 @@ Keys etc.
 
 ## Game Link
 
-[link]
+https://fracado.github.io/project1/
 
 ## Author
 

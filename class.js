@@ -155,7 +155,7 @@ class Canvas {
     $('#game-canvas').hide();
     //var highscore = document.getElementById("highscore");
     if (this.score > localStorage.getItem("highscore")) {
-      $('#highscore').html('<h2>New Highscore: ' + localStorage.getItem("highscore") + '</h2>');
+      $('#highscore-display').html('<h2>New Highscore: ' + localStorage.getItem("highscore") + '</h2>');
     }
 	};
 };
