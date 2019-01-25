@@ -4,33 +4,34 @@
   <link rel="stylesheet" type="text/css" href="style.css">
   <link href='https://fonts.googleapis.com/css?family=Russo+One' rel='stylesheet' type='text/css'>
   <meta charset="utf-8">
-  <title>Snake Game</title>
+  <title>Blocksnake</title>
 </head>
 <body>
   <div class="box1">
-    <h1><img src="/images/title.png" alt="BLOCKsnake"></h1>
+    <h1><img src="images/title.png" alt="BLOCKsnake"></h1>
   </div>
   <div class="box2">
     <section id="game-score">
       <div><p id="user-level">Level: 1</p></div>
-      <div><p id="user-score">Score:</></div>
+      <div><p id="highscore">Highscore:</p></div>
+      <div><p id="user-score">Your Score:</></div>
     </section>
     <div class="game-overlay overlay">
-      <h2 class="game-instructions">Press PLAY to start new game</h2>
+      <h2 class="game-instructions">Press ENTER to start new game!</h2>
     </div>
     <div class="game-over-overlay overlay" style="display: none">
-      <h2 id="highscore">Highscore:</h2>
-      <h2 class="game-over-message">Game over!<br>Press REFRESH to restart</h2><br>
+      <h2 id="highscore"></h2>
+      <h2 class="game-over-message">Game over!<br>Press ESCAPE to return to start menu</h2><br>
     </div>
-    <div><canvas id="game-canvas" width="400" height="400" style="display: none">
+    <div><canvas id="game-canvas" width="700" height="700" style="display: none">
     </canvas></div>
   </div>
-  <div class="box3">
+  <!-- <div class="box3">
     <div><section class="user-interaction">
       <button id="start-button"></button>
       <button id="reset-button"></button>
-   </section></div>
-  </div>
+   </section></div> 
+  </div> -->
   <audio id="bkgmusic" src="audio/bkgmusic.ogg" loop="infinite"></audio>
   <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"

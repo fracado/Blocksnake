@@ -24,18 +24,19 @@ class Canvas {
   constructor(width, height) {
     this.width = width;
     this.height = height;
-    this.snake = new Snake(200, 200, 20, 20);
+    this.snake = new Snake(300, 300, 20, 20, null);
     this.newFood();
     this.totalSnake = [this.snake];
     this.score = 0;
     this.highscore = 0;
     this.level = 1;
+    this.difficulty = 10;
   }
 
   newFood() {
     this.food = new Food(
-      Math.round(Math.round(Math.random() * 380)/20) * 20,
-      Math.round(Math.round(Math.random() * 380)/20) * 20,
+      Math.round(Math.round(Math.random() * 680)/20) * 20,
+      Math.round(Math.round(Math.random() * 680)/20) * 20,
       20,
       20
     )
@@ -62,8 +63,9 @@ class Canvas {
       }
     }
   }
+
   isSnakeCollidingWithWall() {
-    if (this.totalSnake[0].x >= 400 || this.totalSnake[0].x <= -20 || this.totalSnake[0].y >= 400 || this.totalSnake[0].y <= -20) {
+    if (this.totalSnake[0].x >= 700 || this.totalSnake[0].x <= -20 || this.totalSnake[0].y >= 700 || this.totalSnake[0].y <= -20) {
       this.gameOver();
       return true;
     } else {
@@ -143,14 +145,20 @@ class Canvas {
   changeLevel() {
 	  if (this.score % 100 === 0) {
 	    this.level++;
-	    $('#user-level').html('<p>level: ' + this.level + '</p>');
+      $('#user-level').html('<p>level: ' + this.level + '</p>');
+      world.difficulty*20;
     }
   }
 
   gameOver() {
 	  $('.game-over-overlay').show();
     $('#game-canvas').hide();
-    var highscore = document.getElementById("highscore");
-    $('#highscore').html('<h2>Highscore: ' + localStorage.getItem("highscore") + '</h2>');
+    //var highscore = document.getElementById("highscore");
+    if (this.score > localStorage.getItem("highscore")) {
+      $('#highscore').html('<h2>New Highscore: ' + localStorage.getItem("highscore") + '</h2>');
+    }
 	};
 };
+
+var highscore = document.getElementById("highscore");
+    $('#highscore').html('Highscore: ' + localStorage.getItem("highscore"));

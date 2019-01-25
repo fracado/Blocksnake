@@ -4,7 +4,7 @@ var bkgmusic = $("#bkgmusic")[0];
 const canvas = document.getElementById("game-canvas");
 const context = canvas.getContext('2d');
 
-var world = new Canvas(400, 400);
+var world = new Canvas(700, 700);
 
 function startGame() {
   bkgmusic.play();
@@ -37,7 +37,7 @@ function fillSnake() {
 
 setInterval(function () {
   world.tick();
-}, 600);
+}, 2000 / world.difficulty);
 
 requestAnimationFrame(function gameLoop() {
   renderWorld(world);
@@ -47,29 +47,102 @@ requestAnimationFrame(function gameLoop() {
   requestAnimationFrame(gameLoop);
 });
 
+// SET KEY DIRECTIONS
+//function changeDirection(keycode){      
+  window.addEventListener("keydown", keyCode);
+  function keyCode(e){
+  //document.onkeydown = function(event) {
+    //keyCode = window.event.keyCode; 
+        
+    switch(e.keyCode) {
+
+        case 13:
+         startGame();
+          break;
+
+        case 27:
+          reloadGame();
+          break;
+                
+        case 37: 
+          if (world.totalSnake[world.totalSnake.length-1].direction != 'right') {
+            // window.event.preventDefault();  //to prevent any conflicting action for this key
+            world.leftArrow();
+            world.totalSnake[world.totalSnake.length-1].direction = 'left';
+          } 
+          break;
+        
+        case 39:
+          if (world.totalSnake[world.totalSnake.length-1].direction != 'left') {
+            // window.event.preventDefault();  //to prevent any conflicting action for this key
+            world.rightArrow();
+            world.totalSnake[world.totalSnake.length-1].direction = 'right';
+          }
+          break;
+        
+        case 38:
+          if (world.totalSnake[world.totalSnake.length-1].direction != 'down') {
+            // window.event.preventDefault();  //to prevent any conflicting action for this key
+            world.upArrow();
+            world.totalSnake[world.totalSnake.length-1].direction = 'up';
+          }
+          break;
+        
+        case 40:
+          if (world.totalSnake[world.totalSnake.length-1].direction != 'up') {
+            // window.event.preventDefault();  //to prevent any conflicting action for this key
+            world.downArrow();
+            world.totalSnake[world.totalSnake.length-1].direction = 'down';
+          }
+          break;
+      }
+   }
+//}
+
+/*
 document.addEventListener('keydown', function (e) {
   e.preventDefault();
   var keyInput = e.keyCode;
-  if (keyInput === 39) {
+  if (keyInput === 39 && world.totalSnake[world.totalSnake.length-1].direction != 'left') {
+    console.log('right key pressed');
     world.rightArrow();
+    console.log(world.totalSnake[world.totalSnake.length-1].direction);
   }
-  if (keyInput === 37) {
+  if (keyInput === 37 && world.totalSnake[world.totalSnake.length-1].direction != 'right') {
+    console.log('left key pressed');
     world.leftArrow();
+    console.log(world.totalSnake[world.totalSnake.length-1].direction);
   }
-  if (keyInput === 38) {
+  if (keyInput === 38 && world.totalSnake[world.totalSnake.length-1].direction != 'down') {
+    console.log('up key pressed');
     world.upArrow();
+    console.log(world.totalSnake[world.totalSnake.length-1].direction);
   }
-  if (keyInput === 40) {
+  if (keyInput === 40 && world.totalSnake[world.totalSnake.length-1].direction != 'up') {
+    console.log('down key pressed');
     world.downArrow();
+    console.log(world.totalSnake[world.totalSnake.length-1].direction);
   }
 });
+
+document.onkeydown = function(event) {
+if (event.keyCode === 13) {
+  startGame();
+}
 
 $('#start-button').on('click', function () {
   startGame();
 });
 
+
+else if (event.keyCode === 27) {
+  reloadGame();
+}
+}
+
+/*
 $('#reset-button').on('click', function () {
   reloadGame();
 });
-
+*/
 
