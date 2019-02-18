@@ -23,7 +23,7 @@ Use the arrow keys to move the snake. Avoid crashing into Walls or yourself.
 
 ## Game Link
 
-https://fracado.github.io/project1/
+https://fracado.github.io/Blocksnake/
 
 ## Author
 
